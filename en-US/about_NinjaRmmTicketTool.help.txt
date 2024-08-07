@@ -1,0 +1,30 @@
+TOPIC
+    about_NinjaRmmTicketTool
+
+SHORT DESCRIPTION
+    This module provides functions to interact with the NinjaRMM API, including setting global settings and creating tickets.
+
+LONG DESCRIPTION
+    The NinjaRmmTicketTool module allows you to set global settings for the NinjaRMM API and create tickets in NinjaRMM using PowerShell. It includes functions to set the necessary global settings and to create new tickets with specified details.
+
+EXAMPLES
+
+    Example 1: Set global settings
+        PS C:\> Set-NinjaRmmGlobalSettings -TokenUrl 'https://mcstech.rmmservice.com/ws/oauth/token' -ClientID 'your-client-id' -ClientSecret 'your-client-secret' -RefreshToken 'your-refresh-token' -TicketCreationUrl 'https://mcstech.rmmservice.com/v2/ticketing/ticket'
+        Description:
+            This command sets the global settings required to interact with the NinjaRMM API.
+
+    Example 2: Create a new ticket
+        PS C:\> New-NinjaTicket -ClientID 3 -Subject 'CPU with problems' -Description 'Manual PUA cleanup required: WebNavigator Browser at C:\Users\Student\AppData\Local\WebNavigatorBrowser\Application\2.3.0.13\Installer\webnavigatorbrowser.7z' -Priority 'HIGH' -Status '1000' -Type 'PROBLEM' -TicketFormId '2'
+        Description:
+            This command creates a new ticket in NinjaRMM with the specified details.
+
+COMMANDS
+    Set-NinjaRmmGlobalSettings
+        Sets the global settings for the NinjaRmmTicketTool module.
+
+    New-NinjaTicket
+        Creates a new ticket in NinjaRMM.
+
+SEE ALSO
+    https://www.ninjarmm.com/api

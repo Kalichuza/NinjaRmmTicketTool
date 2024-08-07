@@ -1,0 +1,105 @@
+<helpItems schema="maml">
+  <command:command xmlns:command="http://schemas.microsoft.com/maml/dev/command/2008/10">
+    <command:details>
+      <command:name>Set-NinjaRmmGlobalSettings</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NinjaRmmGlobalSettings</command:noun>
+      <command:description>
+        <maml:para>Sets the global settings for the NinjaRmmTicketTool module.</maml:para>
+      </command:description>
+    </command:details>
+    <command:syntax>
+      <command:syntaxItem>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>TokenUrl</command:name>
+          <command:description>
+            <maml:para>The URL for the token endpoint.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>ClientID</command:name>
+          <command:description>
+            <maml:para>The Client ID for the NinjaRMM API.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>ClientSecret</command:name>
+          <command:description>
+            <maml:para>The Client Secret for the NinjaRMM API.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>RefreshToken</command:name>
+          <command:description>
+            <maml:para>The Refresh Token for the NinjaRMM API.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>TicketCreationUrl</command:name>
+          <command:description>
+            <maml:para>The URL for the ticket creation endpoint.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+  </command:command>
+
+  <command:command xmlns:command="http://schemas.microsoft.com/maml/dev/command/2008/10">
+    <command:details>
+      <command:name>New-NinjaTicket</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>NinjaTicket</command:noun>
+      <command:description>
+        <maml:para>Creates a new ticket in NinjaRMM.</maml:para>
+      </command:description>
+    </command:details>
+    <command:syntax>
+      <command:syntaxItem>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>ClientID</command:name>
+          <command:description>
+            <maml:para>The ID of the client for whom the ticket is being created.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>Subject</command:name>
+          <command:description>
+            <maml:para>The subject of the ticket.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>Description</command:name>
+          <command:description>
+            <maml:para>The description of the ticket.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>Priority</command:name>
+          <command:description>
+            <maml:para>The priority of the ticket. Valid values are NONE, HIGH, LOW, MEDIUM.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>Status</command:name>
+          <command:description>
+            <maml:para>The status of the ticket.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" pipelineInput="false" globbing="false">
+          <command:name>Type</command:name>
+          <command:description>
+            <maml:para>The type of the ticket. Valid values are PROBLEM, INCIDENT, REQUEST.</maml:para>
+          </command:description>
+          <command:type>System.String</command:type>
+        </command:parameter>
+        <command
