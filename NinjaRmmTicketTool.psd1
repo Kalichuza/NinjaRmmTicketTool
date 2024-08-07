@@ -15,10 +15,10 @@
     Author = 'Kevin Cleary'
 
     # Company or vendor of this module
-    CompanyName = 'Your Company'
+    CompanyName = 'Kalichuza'
 
     # Description of the functionality provided by this module
-    Description = 'A PowerShell module for creating NinjaRMM tickets.'
+    Description = 'A very unofficial PowerShell module for creating NinjaRMM tickets.'
 
     # Functions to export from this module
     FunctionsToExport = @(
@@ -64,4 +64,7 @@
             ReleaseNotes = 'Initial release of NinjaRmmTicketTool module.'
         }
     }
+
+    # Minimum version of the Windows PowerShell engine required by this module
+    PowerShellVersion = '5.1'
 }
