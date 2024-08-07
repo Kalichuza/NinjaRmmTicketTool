@@ -93,7 +93,10 @@ Function New-NinjaTicket {
         [String] $Type,
 
         [Parameter(Mandatory = $true)]
-        [String] $TicketFormId
+        [String] $TicketFormId,
+
+        [Parameter(Mandatory = $true)]
+        [String] $RequesterUid
     )
 
     # Ensure we have a valid bearer token
@@ -108,6 +111,7 @@ Function New-NinjaTicket {
 
     $Body = @{
         clientId     = [int]$ClientID
+        requesterUid = $RequesterUid
         subject      = $Subject
         description  = @{
             public   = $true
