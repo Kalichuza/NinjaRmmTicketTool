@@ -9,10 +9,10 @@
     CompatiblePSEditions = @('Desktop', 'Core')
 
     # ID used to uniquely identify this module
-    GUID = '00000000-0000-0000-0000-000000000000'
+    GUID = '8d1b0b60-fc9f-4d9e-b8f0-7e42db605e67'  # Actual GUID
 
     # Author of this module
-    Author = 'Your Name'
+    Author = 'Kevin Cleary'
 
     # Company or vendor of this module
     CompanyName = 'Your Company'
@@ -52,13 +52,13 @@
             Tags = @('NinjaRMM', 'API', 'Ticketing')
 
             # A URL to the license for this module.
-            LicenseUri = 'https://example.com/license'
+            LicenseUri = 'https://github.com/Kalichuza/NinjaRmmTicketTool/blob/main/LICENSE'  # Replace with your actual license URL
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://example.com/project'
+            ProjectUri = 'https://github.com/Kalichuza/NinjaRmmTicketTool'  # Replace with your actual project URL
 
             # A URL to an icon representing this module.
-            IconUri = 'https://example.com/icon'
+            IconUri = 'https://github.com/Kalichuza/NinjaRmmTicketTool/blob/main/NinjaRmmTickwtTool.png?raw=true'  # Replace with your actual icon URL
 
             # ReleaseNotes of this module
             ReleaseNotes = 'Initial release of NinjaRmmTicketTool module.'
