@@ -32,9 +32,9 @@ Function Set-NinjaRmmGlobalSettings {
     $global:NinjaRmmTicketCreationUrl = $TicketCreationUrl
 
     Write-Host "Global settings have been set."
-    Write-Host "Token URL: $global:NinjaRmmTokenUrl"
-    Write-Host "Client ID: $global:NinjaRmmClientID"
-    Write-Host "Ticket Creation URL: $global:NinjaRmmTicketCreationUrl"
+    Write-Host "Token URL: $TokenUrl"
+    Write-Host "Client ID: $ClientID"
+    Write-Host "Ticket Creation URL: $TicketCreationUrl"
 }
 
 Function Get-NinjaBearerToken {
@@ -74,6 +74,9 @@ Function New-NinjaTicket {
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory = $true)]
+        [String] $ClientID,
+
+        [Parameter(Mandatory = $true)]
         [String] $Subject,
 
         [Parameter(Mandatory = $true)]
@@ -90,10 +93,7 @@ Function New-NinjaTicket {
         [String] $Type,
 
         [Parameter(Mandatory = $true)]
-        [String] $TicketFormId,
-
-        [Parameter(Mandatory = $true)]
-        [Int] $ClientID
+        [String] $TicketFormId
     )
 
     # Ensure we have a valid bearer token
@@ -107,17 +107,18 @@ Function New-NinjaTicket {
     }
 
     $Body = @{
-        clientId    = $ClientID
-        subject     = $Subject
-        description = @{
-            public = $true
-            body   = $Description
+        clientId     = [int]$ClientID
+        subject      = $Subject
+        description  = @{
+            public   = $true
+            body     = $Description
+            htmlBody = $Description  # Include both text and HTML body for better compatibility
         }
-        priority    = $Priority
-        status      = $Status
-        type        = $Type
-        ticketFormId = $TicketFormId
-    } | ConvertTo-Json
+        priority     = $Priority
+        status       = $Status
+        type         = $Type
+        ticketFormId = [int]$TicketFormId
+    } | ConvertTo-Json -Depth 3
 
     Write-Host "Request URL: $global:NinjaRmmTicketCreationUrl"
     Write-Host "Request Headers: $($Headers | Out-String)"
