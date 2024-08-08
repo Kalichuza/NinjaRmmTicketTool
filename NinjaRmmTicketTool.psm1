@@ -31,10 +31,10 @@ Function Set-NinjaRmmGlobalSettings {
     $global:NinjaRmmRefreshToken = $RefreshToken
     $global:NinjaRmmTicketCreationUrl = $TicketCreationUrl
 
-    Write-Host "Global settings have been set."
-    Write-Host "Token URL: $TokenUrl"
-    Write-Host "Client ID: $ClientID"
-    Write-Host "Ticket Creation URL: $TicketCreationUrl"
+    Write-Verbose "Global settings have been set."
+    Write-Verbose "Token URL: $TokenUrl"
+    Write-Verbose "Client ID: $ClientID"
+    Write-Verbose "Ticket Creation URL: $TicketCreationUrl"
 }
 
 Function Get-NinjaBearerToken {
@@ -52,13 +52,13 @@ Function Get-NinjaBearerToken {
         'Content-Type' = 'application/x-www-form-urlencoded'
     }
 
-    Write-Host "Request URL: $global:NinjaRmmTokenUrl"
-    Write-Host "Request Body: $($Body | ConvertTo-Json -Compress)"
-    Write-Host "Request Headers: $($Headers | Out-String)"
+    Write-Verbose "Request URL: $global:NinjaRmmTokenUrl"
+    Write-Verbose "Request Body: $($Body | ConvertTo-Json -Compress)"
+    Write-Verbose "Request Headers: $($Headers | Out-String)"
 
     try {
         $Response = Invoke-RestMethod -Uri $global:NinjaRmmTokenUrl -Method Post -Headers $Headers -Body $Body
-        Write-Host "Token refresh successful. New access token retrieved."
+        Write-Verbose "Token refresh successful. New access token retrieved."
         $global:NinjaRmmBearerToken = $Response.access_token
     }
     catch {
@@ -87,6 +87,7 @@ Function New-NinjaTicket {
         [String] $Priority,
 
         [Parameter(Mandatory = $true)]
+        [ValidateSet('1000', '2000', '2001', '3000', '3001', '3002', '3003', '3004', '3005', '3006', '3007', '4000', '5000')]
         [String] $Status,
 
         [Parameter(Mandatory = $true)]
@@ -124,20 +125,23 @@ Function New-NinjaTicket {
         ticketFormId = [int]$TicketFormId
     } | ConvertTo-Json -Depth 3
 
-    Write-Host "Request URL: $global:NinjaRmmTicketCreationUrl"
-    Write-Host "Request Headers: $($Headers | Out-String)"
-    Write-Host "Request Body: $Body"
+    Write-Debug "Request URL: $global:NinjaRmmTicketCreationUrl"
+    Write-Debug "Request Headers: $($Headers | Out-String)"
+    Write-debug "Request Body: $Body"
 
     try {
         $Response = Invoke-RestMethod -Uri $global:NinjaRmmTicketCreationUrl -Method Post -Headers $Headers -Body $Body
-        Write-Host "Ticket created successfully: $($Response | ConvertTo-Json -Compress)"
-        return $Response
+        Write-Verbose "Ticket created successfully: $($Response | ConvertTo-Json -Compress)"
+        Write-Verbose $Response
     }
     catch {
         Write-Error "Error in creating ticket: $_"
-        if ($_.Exception.Response -ne $null) {
+        if ($null -ne $_.Exception.Response) {
             $ErrorContent = $_.Exception.Response.Content.ReadAsStringAsync().Result
             Write-Error "Detailed Error: $ErrorContent"
         }
     }
 }
+
+
+
