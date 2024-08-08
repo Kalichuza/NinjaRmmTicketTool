@@ -87,6 +87,7 @@ Function New-NinjaTicket {
         [String] $Priority,
 
         [Parameter(Mandatory = $true)]
+        [ValidateSet('1000', '2000', '2001', '3000', '3001', '3002', '3003', '3004', '3005', '3006', '3007', '4000', '5000')]
         [String] $Status,
 
         [Parameter(Mandatory = $true)]
@@ -135,7 +136,7 @@ Function New-NinjaTicket {
     }
     catch {
         Write-Error "Error in creating ticket: $_"
-        if ($_.Exception.Response -ne $null) {
+        if ($null -ne $_.Exception.Response) {
             $ErrorContent = $_.Exception.Response.Content.ReadAsStringAsync().Result
             Write-Error "Detailed Error: $ErrorContent"
         }
