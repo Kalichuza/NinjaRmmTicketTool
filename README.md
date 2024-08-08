@@ -8,17 +8,22 @@ NinjaRmmTicketTool is a PowerShell module designed to create tickets in NinjaRMM
 
 ## Installation
 
-1. **Clone the Repository:**
+1. **Install from PSGallery:**
+    ```shell
+    Install-Module -Name NinjaRmmTicketTool -AllowClobber -Force
+    ```
+    
+2. **Clone the Repository:**
     ```shell
     git clone https://github.com/yourusername/NinjaRmmTicketTool.git
     ```
    
-2. **Navigate to the Module Directory:**
+3. **Navigate to the Module Directory:**
     ```shell
     cd NinjaRmmTicketTool
     ```
 
-3. **Import the Module:**
+4. **Import the Module:**
     Ensure that the `NinjaRmmTicketTool.psm1` and `NinjaRmmTicketTool.psd1` files are in the same directory.
     ```powershell
     Import-Module -Name .\NinjaRmmTicketTool.psd1 -Force
