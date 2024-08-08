@@ -58,7 +58,7 @@
             ProjectUri = 'https://github.com/Kalichuza/NinjaRmmTicketTool'  # Replace with your actual project URL
 
             # A URL to an icon representing this module.
-            IconUri = 'https://github.com/Kalichuza/NinjaRmmTicketTool/blob/main/NinjaRmmTickwtTool.png?raw=true'  # Replace with your actual icon URL
+            IconUri = 'https://github.com/Kalichuza/NinjaRmmTicketTool/blob/main/NinjaRmmTicketTool.png?raw=true'  # Replace with your actual icon URL
 
             # ReleaseNotes of this module
             ReleaseNotes = 'Initial release of NinjaRmmTicketTool module.'
