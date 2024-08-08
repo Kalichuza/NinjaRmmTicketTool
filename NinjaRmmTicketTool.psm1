@@ -132,7 +132,7 @@ Function New-NinjaTicket {
     try {
         $Response = Invoke-RestMethod -Uri $global:NinjaRmmTicketCreationUrl -Method Post -Headers $Headers -Body $Body
         Write-Verbose "Ticket created successfully: $($Response | ConvertTo-Json -Compress)"
-        return $Response
+        Write-Verbose $Response
     }
     catch {
         Write-Error "Error in creating ticket: $_"
@@ -142,3 +142,6 @@ Function New-NinjaTicket {
         }
     }
 }
+
+
+
