@@ -10,7 +10,7 @@ LONG DESCRIPTION
 EXAMPLES
 
     Example 1: Set global settings
-        PS C:\> Set-NinjaRmmGlobalSettings -TokenUrl 'https://mcstech.rmmservice.com/ws/oauth/token' -ClientID 'your-client-id' -ClientSecret 'your-client-secret' -RefreshToken 'your-refresh-token' -TicketCreationUrl 'https://mcstech.rmmservice.com/v2/ticketing/ticket'
+        PS C:\> Set-NinjaRmmGlobalSettings -TokenUrl 'https://companyname.rmmservice.com/ws/oauth/token' -ClientID 'your-client-id' -ClientSecret 'your-client-secret' -RefreshToken 'your-refresh-token' -TicketCreationUrl 'https://companyname.rmmservice.com/v2/ticketing/ticket'
         Description:
             This command sets the global settings required to interact with the NinjaRMM API.
 

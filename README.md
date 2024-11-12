@@ -49,7 +49,7 @@ Set-NinjaRmmGlobalSettings -TokenUrl <String> -ClientID <String> -ClientSecret <
 
 #### Example
 ```powershell
-Set-NinjaRmmGlobalSettings -TokenUrl 'https://mcstech.rmmservice.com/ws/oauth/token' -ClientID 'vXCIXvybtcZ1lOiRrmVE_OqgktQ' -ClientSecret 'IhpGA-fttZJh4w4_yqQ4zHLpmrWIGVUoWplvi4_q7dZNzb81Ng_zgw' -RefreshToken 'd95b2277-43b9-46d2-a63e-d210d8e5b920.Ua-aeWgVWDJu-lVgTPzGXMr4Oj5BEseNOJgp_2GybKY' -TicketCreationUrl 'https://mcstech.rmmservice.com/v2/ticketing/ticket'
+Set-NinjaRmmGlobalSettings -TokenUrl 'https://companyname.rmmservice.com/ws/oauth/token' -ClientID 'vXCIXvybtcZ1lOiRrmVE_OqgktQ' -ClientSecret 'IhpGA-fttZJh4w4_yqQ4zHLpmrWIGVUoWplvi4_q7dZNzb81Ng_zgw' -RefreshToken 'd95b2277-43b9-46d2-a63e-d210d8e5b920.Ua-aeWgVWDJu-lVgTPzGXMr4Oj5BEseNOJgp_2GybKY' -TicketCreationUrl 'https://companyname.rmmservice.com/v2/ticketing/ticket'
 ```
 
 ### 2. `Get-NinjaBearerToken`
@@ -98,7 +98,7 @@ New-NinjaTicket -Subject 'CPU with problems' -Description 'Manual PUA cleanup re
 
 2. **Set Global Settings:**
     ```powershell
-    Set-NinjaRmmGlobalSettings -TokenUrl 'https://mcstech.rmmservice.com/ws/oauth/token' -ClientID 'vXCIXvybtcZ1lOiRrmVE_OqgktQ' -ClientSecret 'IhpGA-fttZJh4w4_yqQ4zHLpmrWIGVUoWplvi4_q7dZNzb81Ng_zgw' -RefreshToken 'd95b2277-43b9-46d2-a63e-d210d8e5b920.Ua-aeWgVWDJu-lVgTPzGXMr4Oj5BEseNOJgp_2GybKY' -TicketCreationUrl 'https://mcstech.rmmservice.com/v2/ticketing/ticket'
+    Set-NinjaRmmGlobalSettings -TokenUrl 'https://companyname.rmmservice.com/ws/oauth/token' -ClientID 'vXCIXvybtcZ1lOiRrmVE_OqgktQ' -ClientSecret 'IhpGA-fttZJh4w4_yqQ4zHLpmrWIGVUoWplvi4_q7dZNzb81Ng_zgw' -RefreshToken 'd95b2277-43b9-46d2-a63e-d210d8e5b920.Ua-aeWgVWDJu-lVgTPzGXMr4Oj5BEseNOJgp_2GybKY' -TicketCreationUrl 'https://companyname.rmmservice.com/v2/ticketing/ticket'
     ```
 
 3. **Create a New Ticket:**
